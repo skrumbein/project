@@ -2,17 +2,18 @@
 title: "Inflation Data"
 author: "Tom's Traumhaus"
 date: "20.12.2012"
-output: pdf_document
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
 repro:
   packages:
-    - here
-    - tidyverse
-    - lubridate
-    - aaronpeikert/repro@fc7e884
-  scripts:
-    - R/prepare_inflation.R
-  data:
-    - data/raw/inflation.rds
+  - here
+  - tidyverse
+  - lubridate
+  - aaronpeikert/repro@fc7e884
+  scripts: R/prepare_inflation.R
+  data: data/raw/inflation.rds
 ---
 
 ```{r setup, include=FALSE}
@@ -68,5 +69,10 @@ inflation %>%
   ungroup() %>% 
   ggplot() +
   geom_line(aes(date, value, color = name)) +
+  theme_minimal() +
+  ylab("subjective inflation in %-points") +
+  labs(color = "") +
+  theme(legend.position.inside = c(.1, .9)) +
   NULL
 ```
+
