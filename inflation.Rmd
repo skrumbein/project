@@ -65,7 +65,7 @@ inflation %>%
   ggplot() +
   geom_line(aes(date, value, color = name)) +
   theme_minimal() +
-  ylab("subjective inflation in %-points") +
+  ylab("Nasebohren") +
   labs(color = "") +
   NULL
 ```
