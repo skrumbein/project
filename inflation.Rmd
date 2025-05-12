@@ -67,7 +67,6 @@ inflation %>%
   theme_minimal() +
   ylab("subjective inflation in %-points") +
   labs(color = "") +
-  theme(legend.position.inside = c(.1, .9)) +
   NULL
 ```
 
